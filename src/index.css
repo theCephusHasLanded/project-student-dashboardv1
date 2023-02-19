@@ -3,10 +3,12 @@
     display: grid;
     background-color: rgb(162, 122, 69);
     grid-template-areas: "header header" "aside main";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
     background-color: #659367;
+    text-align: center;
     height: 150px;
     width: auto;
     grid-area: header;

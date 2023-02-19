@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CohortClassList({displayAllStudents}) {
+function CohortClassList({ displayAllStudents }) {
   return (
     <div className='cohort-list'>
       <aside>
@@ -22,7 +22,6 @@ function CohortClassList({displayAllStudents}) {
         <hr></hr>
         <h4>Summer 2025</h4>
         <hr></hr>
-
       </aside>
     </div>
   )
