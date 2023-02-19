@@ -1,0 +1,25 @@
+
+.App {
+    display: grid;
+    background-color: rgb(162, 122, 69);
+    grid-template-areas: "header header" "aside main";
+}
+
+header {
+    background-color: #659367;
+    height: 150px;
+    width: auto;
+    grid-area: header;
+}
+
+.cohort-list {
+    display: grid;
+    background-color: rgb(162, 122, 69);
+    grid-area: aside
+}
+
+.student-list {
+display: grid;
+background-color: rgb(89, 55, 12);
+grid-area: main;
+}
