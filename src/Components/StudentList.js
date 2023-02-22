@@ -6,13 +6,13 @@ function StudentList({ studentList }) {
     <div className="student-list">
       <main>
         <h2>All Students</h2>
-        {/* <p>Total Students {studentList.length}</p> */}
+        <p>Total Students {studentList.length}</p>
         <ul>
           {
           studentList.map((student, index) => {
             console.log(student)
             return (
-              <li>
+              <li key={student.id}>
                 <StudentCard student={student} key={index} />
               </li>
             );

@@ -4,27 +4,25 @@ import StudentList from './Components/StudentList';
 import data from './data/data.json'
 import { useState } from 'react'
 
-//const cohortStudents = []
-  // const [studentCard, setStudentCard] = useState([])
 
 
 function App() {
-  // (console.log("lkhn"))
   const [studentList, setStudentList] = useState([])
 
    function displayAllStudents() {
-   setStudentList(studentList => [...studentList, ...data])
+   setStudentList(studentList => [...data])
+  }
+
+  function sortCohort(cohortCode) {
+    setStudentList(data.filter(student => student.cohort.cohortCode === cohortCode))
   }
 
   
   return (
     <div className='App'>
-      <header>
-      <h1>Student Dashboard</h1>
-      </header>
-       <CohortClassList displayAllStudents={displayAllStudents} />
+      <header><h1>Student Dashboard</h1></header>
+       <CohortClassList displayAllStudents={displayAllStudents} sortCohort={sortCohort}/>
        <StudentList studentList={studentList} />
-     
     </div>
   );
 }

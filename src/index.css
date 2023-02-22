@@ -1,27 +1,58 @@
-
 .App {
-    display: grid;
-    background-color: rgb(162, 122, 69);
-    grid-template-areas: "header header" "aside main";
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: grid;
+  background-color: rgb(162, 122, 69);
+  grid-template-areas: "header header" "aside main";
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.choose {
+  text-align: center;
+}
+.img {
+  margin-top: 20px;
+  border: 1px solid black;
+  display: grid;
+  float: left;
+  grid-template-areas: "auto";
+  height: 100px;
+  width: 100px;
+}
+
+ul {
+  list-style: none;
+  margin-right: 5px;
+  padding: 10px;
 }
 
 header {
-    background-color: #659367;
-    text-align: center;
-    height: 150px;
-    width: auto;
-    grid-area: header;
+  background-color: #659367;
+  text-align: center;
+  height: 150px;
+  width: auto;
+  grid-area: header;
+}
+
+.student-card {
+  border: 1px solid black;
+  margin-top: 20px;
+
 }
 
 .cohort-list {
-    display: grid;
-    background-color: rgb(162, 122, 69);
-    grid-area: aside
+  display: grid;
+  background-color: rgb(222, 208, 190);
+  grid-area: aside;
+  text-decoration: underline;
 }
 
 .student-list {
-display: grid;
-background-color: rgb(89, 55, 12);
-grid-area: main;
+  display: grid;
+  background-color: rgb(155, 140, 120);
+  grid-area: main;
+  overflow: hidden;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat( 3, 1fr);
+
 }
