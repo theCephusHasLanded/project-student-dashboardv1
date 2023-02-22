@@ -45,10 +45,10 @@ function StudentCard({ student }) {
           </div>
 
           <div className="certifications">
-            <p>Resume:{student.certifications.resume.toString()}</p>
-            <p>LinkedIn:{student.certifications.linkedin.toString()}</p>
-            <p>Mock Interview:{student.certifications.mockInterview.toString()}</p>
-            <p>Github:{student.certifications.github.toString()}</p>
+            <p>Resume:{student.certifications.resume ? "✔" : "✗" }</p>
+            <p>LinkedIn:{student.certifications.linkedin ? "✔" : "✗"}</p>
+            <p>Mock Interview:{student.certifications.mockInterview ? "✔" : "✗"}</p>
+            <p>Github:{student.certifications.github ? "✔" : "✗"}</p>
           </div>
         </div>
       ) : null }
