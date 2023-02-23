@@ -1,11 +1,11 @@
 import React from "react";
 import StudentCard from "./StudentCard";
 
-function StudentList({ studentList }) {
+function StudentList({ studentList, typeCohort }) {
   return (
     <div className="student-list">
       <main>
-        <h2>All Students</h2>
+        <h2>{typeCohort}</h2>
         <p>Total Students {studentList.length}</p>
         <ul>
           {

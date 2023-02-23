@@ -12,12 +12,13 @@ function StudentCard({ student }) {
   return (
     <div className="student-card">
       <img className="img" src={student.profilePhoto} alt={student.username} />
-      <h6>
+      {/* <h2>{on track/off track}</h2> */}
+      <h2>
         <strong>
           {student.names.preferredName}{" "}
           {student.names.middleName[0].toUpperCase()}. {student.names.surname}
         </strong>
-      </h6>
+      </h2>
       <p>{student.username}</p>
       <p>Birthday: {student.dob}</p>
       <br></br>
@@ -25,6 +26,7 @@ function StudentCard({ student }) {
       {toggleMore ? (
         <div className="info">
           <div className="codewars">
+            <h4><strong>Codewars</strong></h4>
             <p>Current Total:{student.codewars.current.total}</p>
             <p>Last Week:{student.codewars.current.lastWeek}</p>
             <p>Goal:{student.codewars.goal.total}</p>
@@ -39,16 +41,19 @@ function StudentCard({ student }) {
           </div>
 
           <div className="scores">
+          <h4><strong>Scores</strong></h4>
             <p>Assignments:{student.cohort.scores.assignments * 100} %</p>
             <p>Projects:{student.cohort.scores.projects * 100} %</p>
             <p>Assessments:{student.cohort.scores.assessments * 100} %</p>
           </div>
 
           <div className="certifications">
-            <p>Resume:{student.certifications.resume ? "✔" : "✗" }</p>
-            <p>LinkedIn:{student.certifications.linkedin ? "✔" : "✗"}</p>
-            <p>Mock Interview:{student.certifications.mockInterview ? "✔" : "✗"}</p>
-            <p>Github:{student.certifications.github ? "✔" : "✗"}</p>
+          <h4><strong>Certifications</strong></h4>
+
+            <p>Resume:{student.certifications.resume ? " ✔" : " ✗" }</p>
+            <p>LinkedIn:{student.certifications.linkedin ? " ✔" : " ✗"}</p>
+            <p>Mock Interview:{student.certifications.mockInterview ? " ✔" : " ✗"}</p>
+            <p>Github:{student.certifications.github ? " ✔" : " ✗"}</p>
           </div>
         </div>
       ) : null }

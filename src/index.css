@@ -55,3 +55,9 @@ header {
   grid-template-columns: repeat( 3, 1fr);
 
 }
+
+.info h4{
+text-decoration: underline;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
