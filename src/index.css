@@ -1,13 +1,26 @@
+
+
+
+
+
 .App {
   display: grid;
   background-color: rgb(162, 122, 69);
-  grid-template-areas: "header header" "aside main";
+  grid-template-areas: "header header header header" "aside main main main";
+  max-height: 100vh;
+}
+
+.body {
+  height: 100vh;
+  width: 100vw;
 }
 .choose {
   text-align: center;
 }
 .img {
   margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
   border: 1px solid black;
   display: grid;
   float: left;
@@ -40,14 +53,33 @@ header {
   display: grid;
   background-color: rgb(222, 208, 190);
   grid-area: aside;
+  height: 100%;
   text-decoration: underline;
+}
+
+.aside {
+  width: 350px;
+  height: 100%;
+
+}
+
+.main {
+  height: 100%;
+  overflow-y: scroll;
+
 }
 
 .student-list {
   display: grid;
   background-color: rgb(155, 140, 120);
+  height: 100%;
   grid-area: main;
-  overflow: hidden;
+  overflow-y: scroll;
+
+}
+
+.birthday span {
+  color: rgb(154, 240, 108);
 }
 
 .info {

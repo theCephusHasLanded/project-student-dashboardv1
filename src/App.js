@@ -15,7 +15,7 @@ function App() {
 
   function sortCohort(cohortCode) {
     setStudentList(
-      data.filter((student) => student.cohort.cohortCode === cohortCode));
+      data.filter((student) => student.cohort.cohortCode === cohortCode.split(' ').join('')));
     setTypeCohort(cohortCode);
   }
 
