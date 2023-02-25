@@ -6,7 +6,7 @@ function StudentList({ studentList, typeCohort }) {
     <div className="student-list">
       <main>
         <h2>{typeCohort}</h2>
-        <p>Total Students {studentList.length}</p>
+        <p>Total Students: <span>{studentList.length}</span></p>
         <ul>
           {
           studentList.map((student, index) => {

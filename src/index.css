@@ -10,7 +10,7 @@ body {
 
 .App {
   display: grid;
-  background-color: rgb(222, 208, 191);
+  background-color: rgb(151, 190, 60);
   grid-template-areas: "header header header header" "aside main main main";
   box-sizing: border-box;
   height: 100%;
@@ -39,23 +39,31 @@ ul {
 }
 
 header {
-  background-color: #659367;
+  margin: 20px;
+  float: center;
+  /* background-color: #659367; */
   text-align: center;
-  height: 150px;
+  height: 75px;
   width: auto;
   grid-area: header;
 }
 
+.email {
+  text-decoration: underline;
+}
+
+.date span {
+  color: rgb(132, 187, 102);
+}
 .student-card {
   border: 1px solid black;
   margin-top: 20px;
   cursor: pointer;
-
 }
 
 .cohort-list {
   display: grid;
-  background-color: rgb(222, 208, 190);
+  background-color: rgb(198, 238, 142);
   grid-area: aside;
   height: 100%;
  
@@ -84,6 +92,15 @@ header {
   max-height: 650px;
 }
 
+.student-list span {
+  color: rgb(132, 187, 102);
+}
+
+.toggle {
+  padding: 10px;
+  text-decoration: double underline #659367;
+}
+
 .track {
   border: 1px solid black;
   background-color: #77871b;
@@ -93,14 +110,10 @@ header {
   margin-right: 4px;
 }
 
-.birthday span {
-  color: rgb(154, 240, 108);
-}
-
 .info {
   display: grid;
   grid-template-columns: repeat( 3, 1fr);
-
+  text-align: center;
 }
 
 .info h4{
@@ -108,3 +121,15 @@ text-decoration: underline;
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.comment-section {
+  text-align: center;
+  padding-bottom: 20px;
+  background-color: #cfdd81;
+  display: grid;
+}
+
+.comment {
+  border: 1px solid black;
+  text-align: center;
+  color: rgb(125, 147, 94);
+}

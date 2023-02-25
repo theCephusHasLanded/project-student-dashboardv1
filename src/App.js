@@ -7,7 +7,7 @@ import { useState } from "react";
 function App() {
   const [studentList, setStudentList] = useState(data);
   const [typeCohort, setTypeCohort] = useState("All Students");
-
+ 
   function displayAllStudents() {
     setTypeCohort("All Students");
     setStudentList((studentList) => [...data]);
