@@ -7,11 +7,17 @@ function StudentCard({ student }) {
     setToggleMore(!toggleMore);
   }
 
+  // lets replace dem images
+  const BASE_URL= "https://robohash.org/"
+  const roboNum = Math.floor(Math.random() * 1000)
+  const srcPhoto = `${BASE_URL}${roboNum}`
+  const cwScore = ((student.codewars.current.total)/(student.codewars.goal.total/100)).toFixed(0)
   //change the state for toggleMore and negate it  -- setting changes state
 
   return (
     <div className="student-card">
-      <img className="img" src={student.profilePhoto} alt={student.username} />
+      <img className="img" src={srcPhoto} alt={student.username} />
+      <h5 className="track">{cwScore > 65 ? "On Track to Graduate" : "Not On Track to Graduate"}</h5>
       {/* <h2>{on track/off track}</h2> */}
       <h2>
         <strong>
@@ -27,9 +33,12 @@ function StudentCard({ student }) {
         <div className="info">
           <div className="codewars">
             <h4><strong>Codewars</strong></h4>
-            <p>Current Total: {student.codewars.current.total}</p>
-            <p>Last Week: {student.codewars.current.lastWeek}</p>
-            <p>Goal: {student.codewars.goal.total}</p>
+            <p className="current">Current Total: {student.codewars.current.total}</p>
+            <p className="last">Last Week: {student.codewars.current.lastWeek}</p>
+            <p className="goal">Goal: {student.codewars.goal.total}</p>
+            <h6>
+              {/* ({cwScore >= 100 ? style={green} }) */}
+            </h6>
             <p>
               Percent of Goal Achieved:
                {Math.round(
@@ -45,6 +54,7 @@ function StudentCard({ student }) {
             <p>Assignments: {student.cohort.scores.assignments * 100} %</p>
             <p>Projects: {student.cohort.scores.projects * 100} %</p>
             <p>Assessments: {student.cohort.scores.assessments * 100} %</p>
+            
           </div>
 
           <div className="certifications">
@@ -61,7 +71,7 @@ function StudentCard({ student }) {
   );
 }
 
-//* add infinite scroll ?? PAGINATION
-//* get into habit of defining each level of functionality
+//* add infinite scroll ?? PAGINATION ----> nah just basic CSS float
+//* get into habit of defining each level of functionality ----> absolutely Cephus.
 
 export default StudentCard;

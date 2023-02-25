@@ -8,7 +8,7 @@ function CohortClassList({ displayAllStudents, sortCohort }) {
     
     <div className='cohort-list'>
       <aside>
-        <h2 className='choose'>Choose a class by start date</h2>
+        <h2 className='choose'>Choose a class<br></br>by start date</h2>
         {/* map through cohort data */}
         <h4 onClick={displayAllStudents}>All Students</h4>
         <hr></hr>
