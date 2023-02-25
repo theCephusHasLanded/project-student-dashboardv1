@@ -68,7 +68,6 @@ header {
 .aside {
   width: 350px;
   height: 100%;
-
 }
 
 .main {
@@ -82,7 +81,7 @@ header {
   height: 100%;
   grid-area: main;
   overflow-y: scroll;
-  max-height: 600px;
+  max-height: 650px;
 }
 
 .track {
