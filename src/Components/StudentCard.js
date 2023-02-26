@@ -16,7 +16,7 @@ function StudentCard({ student }) {
     const commentText = event.target.elements.Comment.value;
     const newComment = `${commenterName} says "${commentText}"`;
     setComments([...comments, newComment]);
-    event.target.reset();
+    //event.target.reset();
   };
 
   const [toggleMore, setToggleMore] = useState(false);
@@ -24,6 +24,28 @@ function StudentCard({ student }) {
     setToggleMore(!toggleMore);
   }
 
+  function getScoreColor(score) {
+    let color = '';
+    if (score > 75) {
+      color = 'green';
+    } else if (score >= 60 && score <= 75) {
+      color = 'yellow';
+    } else {
+      color = 'red';
+    }
+    return color;
+  }
+
+  // function studentScores ({ student })
+  const assignmentScore = student.cohort.scores.assignments * 100;
+  const projectScore = student.cohort.scores.projects * 100;
+  const assessmentScore = student.cohort.scores.assessments * 100;
+  const warCode = Math.round(
+    (student.codewars.current.total /
+      student.codewars.goal.total) *
+      100
+  )
+  
   // lets replace dem images
   const BASE_URL = "https://robohash.org/";
   const roboNum = Math.floor(Math.random() * 1000);
@@ -45,7 +67,6 @@ function StudentCard({ student }) {
           ? " Not On Track to Graduate"
           : "On Track to Graduate"}
       </h5>
-      {/* <h2>{on track/off track}</h2> */}
       <h2>
         <strong>
           {student.names.preferredName}{" "}
@@ -69,21 +90,14 @@ function StudentCard({ student }) {
                 <strong>Codewars</strong>
               </h4>
               <p className="current">
-                Current Total: {student.codewars.current.total}
+                Current Total: {student.codewars.current.total} 
               </p>
               <p className="last">
                 Last Week: {student.codewars.current.lastWeek}
               </p>
               <p className="goal">Goal: {student.codewars.goal.total}</p>
-              <h6>{/* ({cwScore >= 100 ? style={green} }) */}</h6>
               <p>
-                Percent of Goal Achieved:
-                {Math.round(
-                  (student.codewars.current.total /
-                    student.codewars.goal.total) *
-                    100
-                )}
-                %
+                Percent of Goal Achieved: <span style={{ color: getScoreColor(warCode) }}>{warCode}%</span>
               </p>
             </div>
 
@@ -91,9 +105,9 @@ function StudentCard({ student }) {
               <h4>
                 <strong>Scores</strong>
               </h4>
-              <p>Assignments: {student.cohort.scores.assignments * 100} %</p>
-              <p>Projects: {student.cohort.scores.projects * 100} %</p>
-              <p>Assessments: {student.cohort.scores.assessments * 100} %</p>
+              <p>Assignments: <span style={{ color: getScoreColor(assignmentScore) }}>{assignmentScore}%</span></p>
+              <p>Projects: <span style={{ color: getScoreColor(projectScore) }}>{projectScore}%</span></p>
+              <p>Assessments: <span style={{ color: getScoreColor(assessmentScore) }}>{assessmentScore}%</span></p>
             </div>
 
             <div className="certifications">
@@ -133,6 +147,7 @@ function StudentCard({ student }) {
     </div>
   );
 }
+
 
 //* add infinite scroll ?? PAGINATION ----> nah just basic CSS float
 //* get into habit of defining each level of functionality ----> absolutely Cephus.

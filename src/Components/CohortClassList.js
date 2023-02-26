@@ -1,14 +1,12 @@
-import React from 'react'
-
-
+import React from "react";
 
 function CohortClassList({ displayAllStudents, sortCohort }) {
   return (
-  
-    
-    <div className='cohort-list'>
+    <div className="cohort-list">
       <aside>
-        <h2 className='choose'>Choose a class<br></br>by start date</h2>
+        <h2 className="choose">
+          Choose a class<br></br>by start date
+        </h2>
         {/* map through cohort data */}
         <h4 onClick={displayAllStudents}>All Students</h4>
         <hr></hr>
@@ -30,7 +28,7 @@ function CohortClassList({ displayAllStudents, sortCohort }) {
         <hr></hr>
       </aside>
     </div>
-  )
+  );
 }
 
-export default CohortClassList
+export default CohortClassList;
